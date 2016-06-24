@@ -6,8 +6,6 @@
         <img src="registration.jpg" alt="reg" width="150px">
 </div>
         <form autocomplete="off" action="reg.php" method="post">
-    
-            
             <div id="register">
                 <?php if ($message != ""): ?>            
                 <ul class='message'>
