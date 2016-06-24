@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
+<!--<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>"> -->
+           NAME: <input type="text"  name="name" value="<?php echo $_REQUEST['name'];?>"> 
+           EMAIL:<input type="text"  name="email">
+		<input type="submit" name='submit'>
+        
+        </form>
+        <?php
+        if($_SERVER["REQUEST_METHOD"]=="POST"){
+            $NAME =$_REQUEST["name"];
+            $EMAIL=$_REQUEST["email"];
+		$count= substr_count("$EMAIL","@");
+	if($count==1){
+		echo "$count";        
+	   echo "<h2>INPUT</h2><br>";
+            echo "$NAME"."<br>";
+            echo "$EMAIL"."<br>";
+            }
+           
+        }
+            
+        ?>
+    </body>
+</html>
